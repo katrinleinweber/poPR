@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "ViPR"
 version = "0.1.0"
-description = ""
+description = "Virtual PR Review Tool"
 authors = ["Katrin Leinweber <kalei@posteo.de>"]
 
 [tool.poetry.dependencies]
