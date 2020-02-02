@@ -6,6 +6,7 @@ authors = ["Katrin Leinweber <kalei@posteo.de>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+pygithub = "^1.45"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
