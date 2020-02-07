@@ -1,10 +1,4 @@
-from typing import List
-
-from github import Github
-
-
-def get_diff_urls(repo: str) -> List[str]:
-    repo = Github().get_repo(repo)
+def get_diff_urls(repo):
     base_url = construct_base_url(repo)
     forks = repo.get_forks()
 
@@ -27,6 +21,6 @@ def get_compare_heads(base_url, fork):
     forker = fork.owner.login
     fork_branches = [fb.name for fb in fork.get_branches()]
     compare_heads = [base_url.format(head=forker + ":" + fb) for fb in
-                    fork_branches]
+                     fork_branches]
 
     return compare_heads
