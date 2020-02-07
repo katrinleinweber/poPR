@@ -9,9 +9,9 @@ from vipr.get_diff_urls import get_diff_urls
 @click.option("--repo", help="NAMESPACE/REPO string of the origin to be analysed")
 def open_urls(pat, repo):
     repo_obj = Github(pat).get_repo(repo)
-    urls = get_diff_urls(repo=repo_obj)
-    [print(url) for url in urls]
 
+    for url in get_diff_urls(repo=repo_obj):
+        print(url)
 
 if __name__ == '__main__':
     open_urls()
