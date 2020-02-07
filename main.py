@@ -1,5 +1,3 @@
-import webbrowser
-
 import click
 from github import Github
 
@@ -12,12 +10,7 @@ from vipr.get_diff_urls import get_diff_urls
 def open_urls(pat, repo):
     repo_obj = Github(pat).get_repo(repo)
     urls = get_diff_urls(repo=repo_obj)
-
-    controller = webbrowser.get('Firefox')
-
-    for url in urls:
-        controller.open(url)
-        input("Press Enter to load next comparison")
+    [print(url) for url in urls]
 
 
 if __name__ == '__main__':
