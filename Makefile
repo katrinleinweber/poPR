@@ -1,3 +1,6 @@
-test: main.py
+PAT=
+origin=katrinleinweber/ViPR-test
+
+run: main.py
 	touch $<
-	python3 $< --PAT="${PAT}" --repo="voc/cm"
+	python3 $< --PAT=${PAT} --origin=${origin}
