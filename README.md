@@ -15,3 +15,18 @@ This tool helps maintainers observe all forks of a given repository.
 It finds branches that could be sent upstream by their authors,
 but weren't (for whatever reason).
 Thus, _poPR_ helps to review forked code, in order to merge or cherry-pick it.
+
+## Install & use
+
+> git clone https://github.com/katrinleinweber/poPR
+> cd poPR 
+> python3 main.py --origin=namespace/repo
+
+The script will find all branches in all forks and prompt you to open GitHub's
+own comparison page to review the changes with the option to start a PR.
+This approach aims to keep code complexity and the number of API requests low.
+
+To analyse larger repositories, create a [Personal Access Token][PAT]
+with at least the `public_repo` scope and and pass it with the `--PAT=` option.
+
+[PAT]: https://github.com/settings/tokens
