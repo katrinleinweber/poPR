@@ -6,7 +6,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=katrinleinweber_poPR&metric=alert_status)](https://sonarcloud.io/dashboard?id=katrinleinweber_poPR)
 
 > I believe it is worthwhile trying to discover more about the
-> [branch-iverse], even if this only teaches us how little we
+> [octoverse], even if this only teaches us how little we
 > [have merged].
 >
 > -- liberally quoted from: [Karl Popper's _Conjectures and Refutations: The Growth of Scientific Knowledge_ (1963)](https://en.wikiquote.org/wiki/Karl_Popper#Conjectures_and_Refutations:_The_Growth_of_Scientific_Knowledge_(1963))
