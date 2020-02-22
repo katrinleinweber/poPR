@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "ViPR"
+name = "poPR"
 version = "0.1.0"
-description = "Virtual PR Review Tool"
+description = "Find potential Pull Requests"
 authors = ["Katrin Leinweber <kalei@posteo.de>"]
 
 [tool.poetry.dependencies]
