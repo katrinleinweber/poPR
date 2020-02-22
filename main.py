@@ -1,3 +1,4 @@
+from time import sleep
 
 import click
 from github import Github
@@ -23,6 +24,7 @@ def open_useful_compares(pat: str, origin: str):
     # From that list, remove all branches that exist in origin,
     # and all branches in PRs
     forks: object = repo.get_forks()
+    wait_time = forks.totalCount
     for f in forks:
         check_branches = reduce_to_potential_pr_heads(
             extract_branches(f),
@@ -35,6 +37,8 @@ def open_useful_compares(pat: str, origin: str):
 
         for c in compare_labels:
             compare_in_browser(to_compare=c, base_url=construct_base_url(repo))
+            print("Waiting for {} seconds... GitHub is regenerating your API mana ;-)".format(wait_time))
+            sleep(wait_time)
             input("Press Enter to continue...")
 
 
