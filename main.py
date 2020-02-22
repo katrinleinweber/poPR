@@ -36,10 +36,10 @@ def open_useful_compares(pat: str, origin: str):
         )
 
         for c in compare_labels:
+            input("Press Enter to review potential PR from {}".format(c))
             compare_in_browser(to_compare=c, base_url=construct_base_url(repo))
-            print("Waiting for {} seconds... GitHub is regenerating your API mana ;-)".format(wait_time))
+            print("Waiting for {} second(s) while GitHub is regenerating your API mana ;-)".format(wait_time))
             sleep(wait_time)
-            input("Press Enter to continue...")
 
 
 if __name__ == '__main__':
