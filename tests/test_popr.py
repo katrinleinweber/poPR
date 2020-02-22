@@ -9,12 +9,15 @@ repo: object = Github().get_repo(origin)
 
 
 def test_version():
-    assert __version__ == '0.1.0'
+    assert __version__ == "0.1.0"
 
 
 def test_extract_branches():
-    assert extract_branches(repo, from_pulls=True) == {"branch-in-pr-1", "branch-in-pr-2"}
-    assert extract_branches(repo) == {'master'}
+    assert extract_branches(repo, from_pulls=True) == {
+        "branch-in-pr-1",
+        "branch-in-pr-2",
+    }
+    assert extract_branches(repo) == {"master"}
 
 
 def test_construct_base_url():

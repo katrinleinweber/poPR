@@ -1,5 +1,6 @@
 from typing import Set
 
+
 def extract_branches(repo: object, from_pulls: bool = False) -> Set[str]:
     """
     Returns a set of branch name strings by wrapping PyGithub's get_branches().

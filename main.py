@@ -10,10 +10,14 @@ from popr.reduce_to_potential_pr_heads import reduce_to_potential_pr_heads
 
 
 @click.command()
-@click.option("--PAT", default=None,
-              help="Personal Access Token of your GitHub account.")
-@click.option("--origin", default="",
-              help="'owner/name'-formatted string of the origin to be analysed")
+@click.option(
+    "--PAT", default=None, help="Personal Access Token of your GitHub account."
+)
+@click.option(
+    "--origin",
+    default="",
+    help="'owner/name'-formatted string of the origin to be analysed",
+)
 def open_useful_compares(pat: str, origin: str):
     repo = Github(pat).get_repo(origin)
     repo_branches = extract_branches(repo)
@@ -27,20 +31,20 @@ def open_useful_compares(pat: str, origin: str):
     wait_time = forks.totalCount
     for f in forks:
         check_branches = reduce_to_potential_pr_heads(
-            extract_branches(f),
-            pr_branches,
-            repo_branches
+            extract_branches(f), pr_branches, repo_branches
         )
-        compare_labels = set(
-            map(lambda b: f.owner.login + ":" + b, check_branches)
-        )
+        compare_labels = set(map(lambda b: f.owner.login + ":" + b, check_branches))
 
         for c in compare_labels:
             input("Press Enter to review potential PR from {}".format(c))
             compare_in_browser(to_compare=c, base_url=construct_base_url(repo))
-            print("Waiting for {} second(s) while GitHub is regenerating your API mana ;-)".format(wait_time))
+            print(
+                "Waiting for {} second(s) while GitHub is regenerating your API mana ;-)".format(
+                    wait_time
+                )
+            )
             sleep(wait_time)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     open_useful_compares()

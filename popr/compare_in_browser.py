@@ -10,4 +10,4 @@ def compare_in_browser(to_compare: str, base_url: str):
     if url == {}:
         pass
     else:
-        webbrowser.get('Firefox').open(url)
+        webbrowser.get("Firefox").open(url)
