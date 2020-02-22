@@ -10,7 +10,7 @@ from popr.reduce_to_potential_pr_heads import reduce_to_potential_pr_heads
 
 
 @click.command()
-@click.option("--PAT", default="",
+@click.option("--PAT", default=None,
               help="Personal Access Token of your GitHub account.")
 @click.option("--origin", default="",
               help="'owner/name'-formatted string of the origin to be analysed")
