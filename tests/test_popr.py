@@ -14,7 +14,7 @@ def test_version():
 
 def test_extract_branches():
     assert extract_branches(repo, from_pulls=True) == {"branch-in-pr-1", "branch-in-pr-2"}
-    assert extract_branches(repo) == {'TEST-intra-repo-pr', 'master'}
+    assert extract_branches(repo) == {'master'}
 
 
 def test_construct_base_url():
