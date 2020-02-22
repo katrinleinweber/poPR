@@ -1,5 +1,5 @@
 PAT=
-origin=katrinleinweber/poPR-test
+origin=katrinleinweber/poPR
 
 run: main.py
 	touch $<
