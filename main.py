@@ -3,10 +3,10 @@ from time import sleep
 import click
 from github import Github
 
-from vipr.compare_in_browser import compare_in_browser
-from vipr.construct_base_url import construct_base_url
-from vipr.extract_branches import extract_branches
-from vipr.reduce_to_potential_pr_heads import reduce_to_potential_pr_heads
+from popr.compare_in_browser import compare_in_browser
+from popr.construct_base_url import construct_base_url
+from popr.extract_branches import extract_branches
+from popr.reduce_to_potential_pr_heads import reduce_to_potential_pr_heads
 
 
 @click.command()
