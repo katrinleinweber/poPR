@@ -6,6 +6,7 @@
 >
 > -- liberally quoted from: [Karl Popper's _Conjectures and Refutations: The Growth of Scientific Knowledge_ (1963)](https://en.wikiquote.org/wiki/Karl_Popper#Conjectures_and_Refutations:_The_Growth_of_Scientific_Knowledge_(1963))
 
-This is tool helps maintainers observe the fork-iverse around a given project/repo.
-It finds forks and branches that could be pull-requested by their authors, but haven't.
-Ultimately, it helps to review forked code, in order to then merge or cherry-pick it.
+This tool helps maintainers observe all forks of a given repository.
+It finds branches that could be sent upstream by their authors,
+but weren't (for whatever reason).
+Thus, _poPR_ helps to review forked code, in order to merge or cherry-pick it.
