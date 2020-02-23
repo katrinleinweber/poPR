@@ -7,7 +7,5 @@ def compare_in_browser(to_compare: str, base_url: str):
     # Open compare URL in browser
     # learned from https://stackoverflow.com/a/7062272/4341322
 
-    if url == {}:
-        pass
-    else:
+    if url != {}:
         webbrowser.get("Firefox").open(url)
