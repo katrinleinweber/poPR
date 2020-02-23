@@ -1,5 +1,5 @@
 import click
-from github import Github
+from github import Github, Repository
 
 from popr.compare_in_browser import compare_in_browser
 from popr.construct_base_url import construct_base_url
@@ -28,7 +28,7 @@ def open_useful_compares(pat: str, origin: str):
     # Iterate through forks, getting each one's branches.
     # From that list, remove all branches that exist in origin,
     # and all branches in PRs
-    forks: object = repo.get_forks()
+    forks: Repository = repo.get_forks()
     for f in forks:
         check_branches = reduce_to_potential_pr_heads(pr_branches, fork=f, origin=repo)
         compare_labels = [construct_fork_label(b) for b in check_branches]
