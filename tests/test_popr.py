@@ -12,8 +12,11 @@ def test_version():
     assert __version__ == "0.1.0"
 
 
+pr_branches = extract_branches(repo, from_pulls=True)
+
+
 def test_extract_branches():
-    assert ("branch-in-pr-1" and "branch-in-pr-2") in extract_branches(repo, from_pulls=True)
+    assert ("branch-in-pr-1" and "branch-in-pr-2") in pr_branches
     assert ("master" and "12-test-branch") in extract_branches(repo)
 
 
