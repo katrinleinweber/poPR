@@ -30,9 +30,7 @@ def open_useful_compares(pat: str, origin: str):
     # and all branches in PRs
     forks: object = repo.get_forks()
     for f in forks:
-        check_branches = reduce_to_potential_pr_heads(
-            extract_branches(f), pr_branches, repo_branches
-        )
+        check_branches = reduce_to_potential_pr_heads(pr_branches, fork=f, origin=repo)
         compare_labels = [construct_fork_label(b) for b in check_branches]
 
         for c in compare_labels:
