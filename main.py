@@ -3,6 +3,7 @@ from github import Github
 
 from popr.compare_in_browser import compare_in_browser
 from popr.construct_base_url import construct_base_url
+from popr.construct_fork_label import construct_fork_label
 from popr.extract_branches import extract_branches
 from popr.reduce_to_potential_pr_heads import reduce_to_potential_pr_heads
 from popr.wait_for_api import wait_for_api
@@ -32,7 +33,7 @@ def open_useful_compares(pat: str, origin: str):
         check_branches = reduce_to_potential_pr_heads(
             extract_branches(f), pr_branches, repo_branches
         )
-        compare_labels = set(map(lambda b: f.owner.login + ":" + b, check_branches))
+        compare_labels = [construct_fork_label(b) for b in check_branches]
 
         for c in compare_labels:
             input("Press Enter to review potential PR from {}".format(c))
