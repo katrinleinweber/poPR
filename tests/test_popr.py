@@ -1,7 +1,7 @@
 from github import Github, Repository
 
 from popr import __version__
-from popr.construct_base_url import construct_base_url
+from popr.prep_compare_base_url import prep_compare_base_url
 from popr.extract_branches import extract_branches
 from popr.reduce_to_potential_pr_heads import reduce_to_potential_pr_heads
 
@@ -28,6 +28,8 @@ def test_reduce_to_potential_pr_heads():
     assert ("12-test-branch" and "branch-without-diff") not in potential_branches
 
 
-def test_construct_base_url():
-    base_url = construct_base_url(repo)
-    assert base_url == "https://github.com/katrinleinweber/poPR/compare/master...{head}"
+def test_prep_compare_base_url():
+    assert (
+        prep_compare_base_url(repo)
+        == "https://github.com/katrinleinweber/poPR/compare/master...{}"
+    )
