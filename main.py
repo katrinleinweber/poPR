@@ -30,8 +30,8 @@ def open_useful_compares(pat: str, origin: str):
     # and all branches in PRs
     forks: Repository = repo.get_forks()
     for f in forks:
-        check_branches = reduce_to_potential_pr_heads(pr_branches, fork=f, origin=repo)
-        compare_labels = [construct_fork_label(b) for b in check_branches]
+        check_branches = reduce_to_potential_pr_heads(f, pr_branches, origin=repo)
+        compare_labels = [construct_fork_label(f, b) for b in check_branches]
 
         for c in compare_labels:
             input("Press Enter to review potential PR from {}".format(c))
