@@ -7,4 +7,4 @@ def compare_in_browser(to_compare: str, base_url: str):
     # learned from https://stackoverflow.com/a/7062272/4341322
 
     if url != {}:
-        webbrowser.get("Firefox").open(url)
+        webbrowser.get().open(url)
