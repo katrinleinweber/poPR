@@ -19,7 +19,9 @@ Thus, _poPR_ helps to review forked code, in order to merge or cherry-pick it.
 ## Install & use
 
 > git clone https://github.com/katrinleinweber/poPR
+> 
 > cd poPR 
+>
 > python3 main.py --origin=namespace/repo
 
 The script will find all branches in all forks and prompt you to open GitHub's
