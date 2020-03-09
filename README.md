@@ -28,7 +28,10 @@ The script will find all branches in all forks and prompt you to open GitHub's
 own comparison page to review the changes with the option to start a PR.
 This approach aims to keep code complexity and the number of API requests low.
 
-To analyse larger repositories, create a [Personal Access Token][PAT]
+To analyse repositories with many forks faster, create a [Personal Access Token][PAT]
 with at least the `public_repo` scope and and pass it with the `--PAT=` option.
+However, this should only rarely be necessary, because unlike other tools,
+_poPR_ waits at each potential PR for your review.
+Thus, it won't burn its GitHub API allowance as quickly as other tools.
 
 [PAT]: https://github.com/settings/tokens
