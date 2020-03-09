@@ -11,10 +11,10 @@ def wait_for_api(github: Github):
     """
     rl = github.get_rate_limit().core
     if rl.remaining == round(rl.limit * 0.1):
-        wait_sec = (dt.now() - rl.reset).seconds
+        wait_sec = (dt.now() - rl.reset).seconds * 1.1
         print(
             "Waiting for {} seconds while GitHub is regenerating your API mana ;-)".format(
                 wait_sec
             )
         )
-        sleep(wait_sec * 1.1)
+        sleep(wait_sec)
