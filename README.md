@@ -4,6 +4,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![CodeScene Code Health](https://codescene.io/projects/7153/status-badges/code-health)](https://codescene.io/projects/7153)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=katrinleinweber_poPR&metric=alert_status)](https://sonarcloud.io/dashboard?id=katrinleinweber_poPR)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkatrinleinweber%2FpoPR.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkatrinleinweber%2FpoPR?ref=badge_shield)
 
 > I believe it is worthwhile trying to discover more about the
 > [octoverse], even if this only teaches us how little we
@@ -35,3 +36,7 @@ _poPR_ waits at each potential PR for your review.
 Thus, it won't burn its GitHub API allowance as quickly as other tools.
 
 [PAT]: https://github.com/settings/tokens
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkatrinleinweber%2FpoPR.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkatrinleinweber%2FpoPR?ref=badge_large)
