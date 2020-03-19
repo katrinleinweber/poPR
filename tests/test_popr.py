@@ -1,8 +1,8 @@
 from github import Github, Repository
 
 from popr import __version__
+from popr.compare_in_browser import prep_compare_base_url
 from popr.extract_branches import extract_branches
-from popr.prep_compare_base_url import prep_compare_base_url
 from popr.reduce_to_potential_pr_heads import (
     reduce_to_potential_pr_heads,
     get_compare_status,

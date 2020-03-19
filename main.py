@@ -4,7 +4,6 @@ from github import Github, Repository
 from popr.compare_in_browser import compare_in_browser
 from popr.construct_fork_label import construct_fork_label
 from popr.extract_branches import extract_branches
-from popr.prep_compare_base_url import prep_compare_base_url
 from popr.reduce_to_potential_pr_heads import reduce_to_potential_pr_heads
 from popr.wait_for_api import wait_for_api
 
@@ -35,7 +34,7 @@ def open_useful_compares(pat: str, origin: str):
 
         for head in heads:
             input("Press Enter to review potential PR from {}".format(head))
-            compare_in_browser(head, compare_base=prep_compare_base_url(origin))
+            compare_in_browser(origin, head)
             wait_for_api(gh)
 
 
