@@ -1,6 +1,6 @@
 from typing import Set
 
-from github import Repository
+from github import Repository, GithubException
 
 from popr.construct_fork_label import construct_fork_label
 from popr.extract_branches import extract_branches
@@ -37,10 +37,12 @@ def get_compare_status(repo: Repository, fork: Repository, head: str) -> str:
 
     :return: Status of the compared branch
     """
-    base = repo.default_branch
-    if head == "gh-pages" and base == "master":
-        return "no common ancestor"
-
     label = construct_fork_label(fork, head)
-    compare = repo.compare(base, label)
-    return compare.status
+    try:
+        compare = repo.compare(repo.default_branch, label)
+        return compare.status
+    except GithubException:
+        # Because each head that is not "diverged" is removed,
+        # the exact return make no difference here, like
+        # if GithubException.status == "404":
+        return GithubException.data
