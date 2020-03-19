@@ -9,7 +9,7 @@ def extract_branches(repo: Repository, from_pulls: bool = False) -> Set[str]:
     See https://pygithub.readthedocs.io/en/latest/github_objects/Repository.html#github.Repository.Repository.get_branches
     """
     if from_pulls:
-        branches: Set[str] = set(b.head.ref for b in repo.get_pulls())
+        branches: Set[str] = set(b.head.ref for b in repo.get_pulls(state="all"))
     else:
         branches: Set[str] = set(b.name for b in repo.get_branches())
 

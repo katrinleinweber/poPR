@@ -27,7 +27,7 @@ def open_useful_compares(pat: str, origin: str):
 
     # Iterate through forks, getting each one's branches.
     # From that list, remove all branches that exist in origin,
-    # and all branches in PRs
+    # and all branches in all PRs
     forks: Repository = origin.get_forks()
     for fork in forks:
         heads = reduce_to_potential_pr_heads(fork, pr_branches, origin)
