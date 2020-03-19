@@ -37,6 +37,10 @@ def get_compare_status(repo: Repository, fork: Repository, head: str) -> str:
 
     :return: Status of the compared branch
     """
+    base = repo.default_branch
+    if head == "gh-pages" and base == "master":
+        return "no common ancestor"
+
     label = construct_fork_label(fork, head)
-    compare = repo.compare(repo.default_branch, label)
+    compare = repo.compare(base, label)
     return compare.status
